@@ -172,7 +172,7 @@ const CheckLight = function() {
   setTimeout(CheckLight, 500);
 }
 
-process.on('SIGINT', function() {
+process.on('SIGINT', function() {     //SIGINT는 키보드로부터, interrupt함수 실행시키는 것임.
   gpio.digitalWrite(LED, 0);
   console.log("Program Exit...");
   process.exit();
