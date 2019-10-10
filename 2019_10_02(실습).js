@@ -39,9 +39,7 @@ const checkButton = function() {      //wiringpiISR() 메소드로, 인터럽트
 
 
 //빛의 세기를 조절함
-gpio.softPwmCreate(R, 1, 100);
-gpio.softPwmCreate(G, 1, 100);        //softPwmCreate()로 세기범위 지정
-gpio.softPwmCreate(B, 1, 100);
+
 const showLED = function(x,y) {
     if( x == W ) {
             gpio.softPwmWrite(R,y);       // softPwmWrite()로, Duty Cycle 크기값을 저장.
@@ -60,3 +58,6 @@ gpio.pinMode(B, gpio.OUTPUT);
 gpio.pinMode(Buzzer, gpio.OUTPUT);
 gpio.pinMode(Button, gpio.INPUT);
 gpio.wiringpiISR(Button, gpio.INT_EDGE_RISING, checkButton);    //버튼은 wiringpiISR()메소드로, 인터럽트 발생 처리.
+gpio.softPwmCreate(R, 1, 100);
+gpio.softPwmCreate(G, 1, 100);        //softPwmCreate()로 세기범위 지정
+gpio.softPwmCreate(B, 1, 100);          
