@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    window.onload = function() {
+        var socket = io.connect();
+        var html = '';
+        var checkdata= 100;
+
+
+        document.getElementById('led1on').onclick = function() {
+                checkdata = 1;
+                socket.emit('LED_TOGGLE', checkdata);
+        };
+
+        document.getElementById('led1off').onclick = function() {
+                checkdata = 0;
+                socket.emit('LED_TOGGLE', checkdata);
+        };
+
+
+        document.getElementById('buzzeron').onclick = function() {
+                checkdata = 1;
+                socket.emit('BUZZOR_TOGGLE', checkdata);
+        };
+
+        document.getElementById('buzzeroff').onclick = function() {
+                checkdata = 0;
+                socket.emit('BUZZOR_TOGGLE', checkdata);
+        };
+
+
+        document.getElementById('Ron').onclick = function() {
+                checkdata = 1;
+                socket.emit('R_TOGGLE', checkdata);
+        };
+
+        document.getElementById('Roff').onclick = function() {
+                checkdata = 0;
+                socket.emit('R_TOGGLE', checkdata);
+        };
+
+
+        document.getElementById('Gon').onclick = function() {
+                checkdata = 1;
+                socket.emit('G_TOGGLE', checkdata);
+        };
+
+        document.getElementById('Goff').onclick = function() {
+                checkdata = 0;
+                socket.emit('G_TOGGLE', checkdata);
+        };
+
+
+        document.getElementById('Bon').onclick = function() {
+                checkdata = 1;
+                socket.emit('B_TOGGLE', checkdata);
+        };
+
+        document.getElementById('Bon').onclick = function() {
+                checkdata = 0;
+                socket.emit('B_TOGGLE', checkdata);
+        };
+
+  };
+  </script>
+</head>
+
+<body bgcolor="lightcyan">
+  <h2> 눌러라 </h2>
+
+  <hr>
+  LED1
+  <input type="button" id="led1on" value="1" />
+  <input type="button" id="led1off" value="0" />
+
+  <hr>
+  BUZZER
+  <input type="button" id="buzzeron" value="1" />
+  <input type="button" id="buzzeroff" value="0" />
+
+  <hr>
+  LED3--------(RGB)ON->
+  <input type="button" id="Ron" value="1" />
+  <input type="button" id="Gon" value="1" />
+  <input type="button" id="Bon" value="1" />
+  -----------(RGB)OFF->
+  <input type="button" id="Roff" value="0" />
+  <input type="button" id="Goff" value="0" />
+  <input type="button" id="Bon" value="0" />
+
+</body>
+
+</html>

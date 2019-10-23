@@ -7,22 +7,22 @@
   <script>
     window.onload = function() {
         var dataview = document.getElementById("dataview");
-        var socket = io.connect();
+        var socket = io.connect();      // 클라이언트가 socket.io에 접속합니다. connection후, 대기상태.
         var html = '';
 
-        socket.on('watch', function (data) {
+        socket.on('watch', function (data) {          // 서버 --------------------> 브라우저
                 html += '<b>' + data + '</b>' + '<br>';
                 dataview.innerHTML = html;
         });
 
         document.getElementById('start').onclick = function() {
                 var text = document.getElementById('text').value;
-                socket.emit('startmsg', text);
+                socket.emit('startmsg', text);          // 브라우저 --------------------> 서버
         };
 
         document.getElementById('stop').onclick = function() {
                 var text = document.getElementById('text').value;
-                socket.emit('stopmsg', text);
+                socket.emit('stopmsg', text);          // 브라우저 --------------------> 서버
         };
   };
   </script>
