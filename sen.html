@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Embedded App</title>
+</head>
+
+<body bgcolor="lightcyan">
+  <h2>임베디드시스템제어</h2>
+  <hr>
+  <h3>센서측정제어</h3>
+  <hr>
+  <ul>
+    <li>
+      <a href="/1">사운드센서측정ON</a>
+    </li>
+    <li>
+      <a href="/0">사운드센서측정OFF</a>
+    </li>
+    <li>
+      <a href="/2">조도측정 ON(조도센서 입력값에 따라, LED의 밝기값이 변화됩니다. 브라우저 화면에 표시되지 않습니다.)</a>
+    </li>
+    <li>
+      <a href="/3">조도측정 OFF</a>
+    </li>
+
+  </ul>
+  <hr>
+  <h3>기준값 설정</h3>
+  <h6>기준값 입력범위: 0~4095(12비트) 입력값으로 조정가능</h6>
+  <hr>
+  <form name="soundon" method="POST">
+    <div class="input">
+      <span class="label">기준값</span>
+      <input type="text" name="threshold" />
+    </div>
+    <hr>
+    <div class="input">
+        <input type="submit" value="기준값설정" />
+    </div>
+  </form>
+</body>
+
+</html>
