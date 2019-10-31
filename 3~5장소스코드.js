@@ -307,3 +307,8 @@ gpio.pinMode(BUTTON, gpio.INPUT);
 gpio.pinMode(LED, gpio.OUTPUT);
 console.log("이벤트방식: 버튼을 누르면 LED 켜집니다");
 gpio.wiringPiISR(BUTTON, gpio.INT_EDGE_RISING, DetectButton);
+
+
+// 밝기의 단계를 제어하는등의 아날로그 값 조절
+// softPwmWrite(pin, 값)
+// softPwmCreate(pin, 최소값, 최대값);
